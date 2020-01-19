@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.generator.html',
 })
+
 export class Generator {
   shortened = '';
   url = '';
@@ -20,6 +21,6 @@ export class Generator {
   store() {
     localStorage.setItem(this.hash, this.url);
 
-    this.shortened = 'localhost:8000/' + this.hash;
+    this.shortened = 'localhost:4200/' + this.hash;
   }
 }

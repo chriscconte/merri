@@ -11,19 +11,23 @@
       Enter your url below
     </label>
     <input type="text" [(ngModel)]="url"/>
+    <br>
 
     <label>
       Enter your shortened phrase here, or let us generate one
     </label>
+    <br>
     <button (click)="generate()">
       Generate
     </button>
 
     <input type="text" [(ngModel)]="hash"/>
+    <br>
 
     <button (click)="store()" [disabled]="! hash">
        Get your link
     </button>
+    <br>
 
     <div *ngIf="shortened">
       <h3>

@@ -8,21 +8,14 @@ import { NotFound } from './app.component.notFound';
 
 const routes: Routes = [
   { path: 'generator', component: Generator },
-  { path: ':hash',      component: RedirectTo },
-  {
-    path: 'admin',
-    component: AdminConsole,
-    // data: { title: 'Admin Console' }
-  },
-  {
-    path: '404', component: NotFound,
-    pathMatch: 'full'
-  },
-  {
-    path: '',
-    redirectTo: '/generator',
-    pathMatch: 'full'
-  }
+  { path: 'admin', component: AdminConsole },
+  { path: '404', component: NotFound },
+  { path: ':hash', component: RedirectTo }
+  // {
+  //   path: '',
+  //   redirectTo: '/generator',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({

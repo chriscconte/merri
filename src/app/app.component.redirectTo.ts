@@ -7,6 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class RedirectTo implements OnInit {
+  name = '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -16,6 +18,8 @@ export class RedirectTo implements OnInit {
     this.route.paramMap.subscribe(params => {
 
       if (localStorage.hasOwnProperty(params.get('hash'))) {
+        this.name = params.get('hash');
+
         let url = localStorage.getItem(params.get('hash'));
 
         window.location.replace(url);

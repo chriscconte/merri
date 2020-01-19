@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AdminConsole implements OnInit {
-  links = {};
+  links = [];
 
   constructor() { }
 
   ngOnInit() {
     for (let i in localStorage) {
       if (localStorage.hasOwnProperty(i)) {
-        this.links[i] = localStorage[i];
+        this.links.push({short: i, long: localStorage[i]});
       }
     }
   }
