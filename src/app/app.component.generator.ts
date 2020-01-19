@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.generator.html',
+  templateUrl: './app.component.generator.html'
 })
 
 export class Generator {

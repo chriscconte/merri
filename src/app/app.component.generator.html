@@ -5,38 +5,47 @@
 		<title>Generator</title>
 	</head>
 	<body>
-    <h1> Generator </h1>
+    <div class="container">
+      <h1 class="is-size-2"> Generator </h1>
 
-    <label>
-      Enter your url below
-    </label>
-    <input type="text" [(ngModel)]="url"/>
-    <br>
+      <div class="field">
+        <div class="label">
+          Enter your url below
+        </div>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="url"/>
+        </div>
+      </div>
 
-    <label>
-      Enter your shortened phrase here, or let us generate one
-    </label>
-    <br>
-    <button (click)="generate()">
-      Generate
-    </button>
+      <label class="label">
+        Enter your shortened phrase here, or let us generate one
+      </label>
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="hash"/>
+        </div>
+        <div class="control">
+          <button class="input button is-info" (click)="generate()">
+            Generate
+          </button>
+        </div>
+      </div>
 
-    <input type="text" [(ngModel)]="hash"/>
-    <br>
+      <button class="button is-success" (click)="store()" [disabled]="! (hash && url)">
+         Get your link
+      </button>
 
-    <button (click)="store()" [disabled]="! hash">
-       Get your link
-    </button>
-    <br>
+      <div class="container" style="padding: 10px;">
+        <div class="notification" *ngIf="shortened">
+          <h3>
+            Here's your link to share: <strong> {{ shortened }} </strong>
+          </h3>
+        </div>
+      </div>
 
-    <div *ngIf="shortened">
-      <h3>
-        Voilà!
-      </h3>
-
-      <h2>
-        {{ shortened }}
-      </h2>
+      <div style="margin-top: 10px;">
+        <a routerLink="/admin">View all generated links</a>
+      </div>
     </div>
 
 	</body>
