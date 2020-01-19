@@ -10,12 +10,12 @@ const routes: Routes = [
   { path: 'generator', component: Generator },
   { path: 'admin', component: AdminConsole },
   { path: '404', component: NotFound },
-  { path: ':hash', component: RedirectTo }
-  // {
-  //   path: '',
-  //   redirectTo: '/generator',
-  //   pathMatch: 'full'
-  // }
+  { path: ':hash', component: RedirectTo },
+  {
+    path: '',
+    redirectTo: '/generator',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
