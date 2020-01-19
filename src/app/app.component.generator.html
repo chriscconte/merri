@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8" />
+		<title>Generator</title>
+	</head>
+	<body>
+    <h1> Generator </h1>
+
+    <label>
+      Enter your url below
+    </label>
+    <input type="text" [(ngModel)]="url"/>
+
+    <label>
+      Enter your shortened phrase here, or let us generate one
+    </label>
+    <button (click)="generate()">
+      Generate
+    </button>
+
+    <input type="text" [(ngModel)]="hash"/>
+
+    <button (click)="store()" [disabled]="! hash">
+       Get your link
+    </button>
+
+    <div *ngIf="shortened">
+      <h3>
+        Voilà!
+      </h3>
+
+      <h2>
+        {{ shortened }}
+      </h2>
+    </div>
+
+	</body>
+</html>
